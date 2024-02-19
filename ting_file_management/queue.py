@@ -19,6 +19,12 @@ class Queue(AbstractQueue):
             raise IndexError("Índice Inválido ou Inexistente")
         return self._queue[index]
 
+    def index_of(self, value):
+        try:
+            return self._queue.index(value)
+        except ValueError:
+            return -1
+
 
 if __name__ == "__main__":
     queue = Queue()
