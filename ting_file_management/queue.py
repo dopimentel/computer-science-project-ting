@@ -12,6 +12,8 @@ class Queue(AbstractQueue):
         self._queue.append(value)
 
     def dequeue(self):
+        if len(self._queue) == 0:
+            return None
         return self._queue.pop(0)
 
     def search(self, index):
@@ -28,9 +30,10 @@ class Queue(AbstractQueue):
 
 if __name__ == "__main__":
     queue = Queue()
-    queue.enqueue(1)
+    queue.enqueue(10)
     queue.enqueue(2)
     queue.enqueue(3)
 
     print(queue.search(0))
     print(len(queue))
+    print(queue.dequeue())
