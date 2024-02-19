@@ -7,7 +7,7 @@ def process(path_file, instance: Queue):
     new_dict = {
         "nome_do_arquivo": path_file,
         "qtd_linhas": len(lines),
-        "linhas": lines,
+        "linhas_do_arquivo": lines,
     }
     if instance.index_of(new_dict) == -1:
         instance.enqueue(new_dict)
