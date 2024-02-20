@@ -26,6 +26,9 @@ class Queue(AbstractQueue):
             return self._queue.index(value)
         except ValueError:
             return -1
+        
+    def queue(self):
+        return self._queue
 
 
 if __name__ == "__main__":

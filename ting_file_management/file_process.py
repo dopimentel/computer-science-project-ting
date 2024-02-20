@@ -1,4 +1,4 @@
-from queue import Queue
+from ting_file_management.queue import Queue
 import sys
 from ting_file_management.file_management import txt_importer
 
@@ -12,7 +12,7 @@ def process(path_file, instance: Queue):
     }
     if instance.index_of(new_dict) == -1:
         instance.enqueue(new_dict)
-        print(new_dict)
+        # print(new_dict)
     else:
         print("Arquivo já importado")
 
@@ -36,3 +36,4 @@ def file_metadata(instance, position):
 if __name__ == "__main__":
     queue = Queue()
     process("statics/arquivo_teste.txt", queue)
+    # file_metadata(queue, 0)
