@@ -1,9 +1,10 @@
 from ting_file_management.abstract_queue import AbstractQueue
+from collections import deque
 
 
 class Queue(AbstractQueue):
     def __init__(self):
-        self._queue = []
+        self._queue = deque()
 
     def __len__(self):
         return len(self._queue)
@@ -14,7 +15,7 @@ class Queue(AbstractQueue):
     def dequeue(self):
         if len(self._queue) == 0:
             return None
-        return self._queue.pop(0)
+        return self._queue.popleft()
 
     def search(self, index):
         if index < 0 or index >= len(self._queue):
@@ -23,12 +24,12 @@ class Queue(AbstractQueue):
 
     def index_of(self, value):
         try:
-            return self._queue.index(value)
+            return list(self._queue).index(value)
         except ValueError:
             return -1
-        
+
     def queue(self):
-        return self._queue
+        return list(self._queue)
 
 
 if __name__ == "__main__":
