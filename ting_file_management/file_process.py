@@ -12,7 +12,7 @@ def process(path_file, instance: Queue):
     }
     if instance.index_of(new_dict) == -1:
         instance.enqueue(new_dict)
-        # print(new_dict)
+        print(new_dict)
     else:
         print("Arquivo já importado")
 
